@@ -20,7 +20,7 @@ var angularRequestCacheApp = angular.module('angularRequestCacheApp', [])
       });
   }])
   .factory('ajax', function($http, $timeout, $rootScope) {
-		var store = new Persist.Store('RequestCacheStore');
+	var store = new Persist.Store('RequestCacheStore');
 	return function(url, fn, cache){
 		
         if(!cache)cache=false;
@@ -38,7 +38,7 @@ var angularRequestCacheApp = angular.module('angularRequestCacheApp', [])
 					fn(val);
 				  }
 				});
-                var promise = $http.get(url,{},{cache:cache}).then(function (response) {
+				$http.get(url,{},{cache:cache}).then(function (response) {
                     fn(response);
 					store.set(url,response);
 					$rootScope.$apply();
