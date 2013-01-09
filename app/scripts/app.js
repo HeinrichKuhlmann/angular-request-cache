@@ -1,5 +1,5 @@
 'use strict';
-var store = new Persist.Store('RequestCacheStore');
+
 var angularRequestCacheApp = angular.module('angularRequestCacheApp', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -20,7 +20,7 @@ var angularRequestCacheApp = angular.module('angularRequestCacheApp', [])
       });
   }])
   .factory('ajax', function($http, $timeout, $rootScope) {
-	
+		var store = new Persist.Store('RequestCacheStore');
 	return function(url, fn, cache){
 		
         if(!cache)cache=false;

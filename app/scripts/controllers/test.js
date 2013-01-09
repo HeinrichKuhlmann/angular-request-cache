@@ -12,6 +12,6 @@ angularRequestCacheApp.controller('TestCtrl', function($scope, ajax) {
 	var fn = function(val){
 		$scope.cached = val;
 	}
-	ajax($scope.controllerUrl,fn).getc();
+	ajax($scope.controllerUrl,fn).getTest();
   }
 });
